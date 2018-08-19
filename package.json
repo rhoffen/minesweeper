@@ -1,0 +1,16 @@
+{
+  "name": "command-line-minesweeper",
+  "version": "1.0.0",
+  "description": "A command line version of minesweeper",
+  "main": "game.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d lib"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}
