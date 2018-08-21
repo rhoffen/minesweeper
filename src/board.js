@@ -4,6 +4,7 @@ export class Board {
     this._numberOfTiles = numberOfRows*numberOfColumns;
     this._playerBoard = Board.generatePlayerBoard(numberOfRows,numberOfColumns);
     this._bombBoard = Board.generateBombBoard(numberOfRows, numberOfColumns, numberOfBombs);
+    return;
   }
 
   get playerBoard() {
@@ -19,9 +20,11 @@ export class Board {
       return;
     } else if (this._bombBoard[rowIndex][columnIndex] === 'B') {
       this.playerBoard[rowIndex][columnIndex] = 'B';
+      return;
     } else {
       this.playerBoard[rowIndex][columnIndex] = this.getNumberOfNeighborBombs(rowIndex, columnIndex);
-      this._numberOfTiles--; //This is the only condition for which _numberOfTiles should decrease.
+      this._numberOfTiles--;
+      return this._numberOfTiles; //This is the only condition for which _numberOfTiles should decrease.
     }
     //_numberOfTiles--; Instructions in step 13 of Day 18 say to put this here, but I disagree.
   }
@@ -49,6 +52,7 @@ export class Board {
 
   print() {
     console.log(this.playerBoard.map(row => row.join(' | ')).join('\n'));
+    return;
   }
 
   static generatePlayerBoard(numberOfRows, numberOfColumns) {

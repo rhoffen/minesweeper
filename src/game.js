@@ -13,6 +13,7 @@ import { Board } from './board.js';
 class Game {
   constructor(numberOfRows, numberOfColumns, numberOfBombs) {
     this._board = new Board(numberOfRows, numberOfColumns, numberOfBombs);
+    return;
   }
 
   playMove(rowIndex, columnIndex) {
@@ -27,5 +28,6 @@ class Game {
       console.log('Current board:\n');
       this._board.print();
     }
+    return;
   }
 }
