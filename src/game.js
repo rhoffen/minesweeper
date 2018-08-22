@@ -20,14 +20,17 @@ class Game {
     this._board.flipTile(rowIndex, columnIndex);
     if (this._board.playerBoard[rowIndex][columnIndex] === 'B') {
       console.log('Game over! Final Board:\n');
-      this._board.print();
+      //this._board.print();
+      board = this._board.print();
     } else if (!this._board.hasSafeTiles()) {
       console.log('Congratulations, you have cleared the minefield!\n');
-      this._board.print();
+      //this._board.print();
+      board = this._board.print();
     } else {
       console.log('Current board:\n');
-      this._board.print();
+      //this._board.print();
+      board = this._board.print();
     }
-    return;
+    return board;
   }
 }

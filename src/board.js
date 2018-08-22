@@ -50,9 +50,14 @@ export class Board {
     return (this._numberOfTiles !== this._numberOfBombs);
   }
 
+  // print() {
+  //   console.log(this.playerBoard.map(row => row.join(' | ')).join('\n'));
+  //   return;
+  // }
+
   print() {
-    console.log(this.playerBoard.map(row => row.join(' | ')).join('\n'));
-    return;
+    let print = this.playerBoard.map(row => row.join(' | ').join('\n'));
+    return print;
   }
 
   static generatePlayerBoard(numberOfRows, numberOfColumns) {
