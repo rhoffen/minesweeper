@@ -13,10 +13,11 @@ import { Board } from './board.js';
 class Game {
   constructor(numberOfRows, numberOfColumns, numberOfBombs) {
     this._board = new Board(numberOfRows, numberOfColumns, numberOfBombs);
-    return;
+    //return;
   }
 
   playMove(rowIndex, columnIndex) {
+    let board;
     this._board.flipTile(rowIndex, columnIndex);
     if (this._board.playerBoard[rowIndex][columnIndex] === 'B') {
       console.log('Game over! Final Board:\n');
@@ -31,6 +32,7 @@ class Game {
       //this._board.print();
       board = this._board.print();
     }
+    //let board = this._board.print();
     return board;
   }
 }

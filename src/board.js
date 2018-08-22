@@ -56,8 +56,9 @@ export class Board {
   // }
 
   print() {
-    let print = this.playerBoard.map(row => row.join(' | ').join('\n'));
-    return print;
+    let print = this.playerBoard.map(row => row.join(' | ')).join('\n');
+    console.log(print);
+    return;
   }
 
   static generatePlayerBoard(numberOfRows, numberOfColumns) {
